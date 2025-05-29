@@ -5,6 +5,7 @@ import os
 import importlib.util
 import sys
 import json
+import logging
 
 # Üst dizini sys.path'e ekle (algo_stratejiler ve polygon_veri_cekme için)
 sys.path.append(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
@@ -24,6 +25,9 @@ data = polygon_veri_cekme('AAPL', '2023-01-01', '2023-01-31')
 
 sonuclar = []
 
+# Hata loglama için logging modülü ekleyeceğim. Tüm hata durumlarını ve önemli olayları 'butun_hata_kayitlari.log' dosyasına kaydedeceğim. Ekrana yazılan hata mesajları log dosyasına da yazılacak.
+logging.basicConfig(filename='butun_hata_kayitlari.log', level=logging.INFO, format='%(asctime)s %(levelname)s:%(message)s')
+
 # Her strateji dosyasını izole import et ve çalıştır
 for dosya in strateji_dosyalar:
     dosya_yolu = os.path.join(STRATEJI_DIR, dosya)
@@ -36,10 +40,15 @@ for dosya in strateji_dosyalar:
         if hasattr(strateji_modul, 'run_strategy'):
             sonuc = strateji_modul.run_strategy(data)
             sonuclar.append({'modul': modul_adi, 'sonuc': sonuc})
+            logging.info(f"{modul_adi} başarıyla çalıştı.")
         else:
+            msg = f"{modul_adi}: run_strategy fonksiyonu yok"
             sonuclar.append({'modul': modul_adi, 'sonuc': None, 'hata': "run_strategy fonksiyonu yok"})
+            logging.error(msg)
     except Exception as e:
+        msg = f"{modul_adi}: {str(e)}"
         sonuclar.append({'modul': modul_adi, 'sonuc': None, 'hata': str(e)})
+        logging.error(msg)
 
 # Sonuçları JSON dosyasına kaydet
 with open(SONUC_DOSYASI, 'w') as f:

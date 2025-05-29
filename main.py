@@ -3,6 +3,9 @@ import sys
 import importlib.util
 from polygon_veri_cekme import polygon_veri_cekme
 from backtest.backtest_raporlama import raporla
+import logging
+
+logging.basicConfig(filename='butun_hata_kayitlari.log', level=logging.INFO, format='%(asctime)s %(levelname)s:%(message)s')
 
 # Kullanıcıdan veri parametrelerini al
 print("--- Polygon Veri Parametreleri ---")
@@ -43,6 +46,7 @@ try:
         raise ValueError
 except ValueError:
     print("Geçersiz seçim. Çıkılıyor.")
+    logging.error("Geçersiz strateji seçimi: %s", secim)
     sys.exit(1)
 
 secilen_modul = strateji_adlari[secim_idx]
@@ -66,8 +70,10 @@ data = polygon_veri_cekme(
 if hasattr(strateji_modul, 'run_strategy'):
     sonuc = strateji_modul.run_strategy(data)
     sonuclar = [{'modul': secilen_modul, 'sonuc': sonuc}]
+    logging.info("Strateji %s başarıyla çalıştı.", secilen_modul)
 else:
     sonuclar = [{'modul': secilen_modul, 'sonuc': None, 'hata': 'run_strategy fonksiyonu yok'}]
+    logging.error("Strateji %s: run_strategy fonksiyonu yok", secilen_modul)
 
 # Raporlama
 giris = input("Analiz tamamlandı. Sonuçları ekrana yazdırmak için Enter'a basın...")

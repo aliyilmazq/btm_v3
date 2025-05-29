@@ -1,0 +1,27 @@
+---
+description: 
+globs: 
+alwaysApply: false
+---
+uygulamayı yaparken hep izole bir yapı kur, yeni geliştirmeler eski kod yapılarını asla bozmasın ve bir hatayı çözmeden geliştirmeye devam etme. Mevcudu korumak ve eskiyi bozmamak ana hedefimiz.
+
+UI geliştirirken tamamen izole çalış, hiçbir zaman arka plandaki hesaplamalar mantık veya herhangi matematiksel bir şey kodlarla alakalı bir durum asla kayba uğramasını değiştirilmesin sadece ön katmanda çalış.
+
+frontend ve backend hep otomatik başlat
+Her adımı sırayla takip et
+Her fazın sonunda test et
+Integration point'lerde full test yap
+
+rontend hiçbir matematik, analiz veya veri işleme yapmayacak, sadece aracı olacak.
+Rapor ve hata mesajları da backend’den dönecek, frontend sadece gösterecek.
+Stepper ve responsive:
+Kullanıcıyı adım adım yönlendiren, mobil uyumlu bir arayüz.
+Önerilen Akış (Frontend için)
+Adım 1: Kullanıcıdan hisse sembolü, tarih aralığı, periyot alınır.
+Adım 2: Backend’den strateji listesi çekilir, kullanıcı birini seçer.
+Adım 3: “Analiz Et” butonuna basınca, tüm parametreler backend’e gönderilir.
+Adım 4: Backend’den gelen analiz sonucu ve rapor ekranda gösterilir (hata varsa hata mesajı da gösterilir).
+Frontend’de hiçbir iş mantığı, veri işleme veya matematiksel analiz olmayacak.
+Sadece API ile konuşacak, gelen cevabı gösterecek.
+
+SPA ve PWA web app yapıyoruz.
