@@ -1,2 +1,50 @@
-requests
-python-dotenv 
+# === API ve Web Framework ===
+fastapi==0.110.0
+uvicorn[standard]==0.29.0
+httpx==0.27.0
+python-dotenv==1.0.1
+
+# === Veri Analizi ve İşleme ===
+pandas==2.2.2
+numpy==1.26.4
+tqdm==4.66.2
+
+# === Finansal Backtest Motorları ===
+backtrader==1.9.78.123
+bt==0.2.9       # Alternatif backtest motoru
+quantstats==0.0.59  # Performans raporlama
+
+# === Zaman Serileri & Modelleme ===
+statsmodels==0.14.2     # ARIMA, OLS, vb.
+# arch==7.2.0           # GARCH modelleri (uyumsuz, çıkarıldı)
+# hmmlearn==0.2.8         # HMM için (uyumsuz, çıkarıldı)
+scikit-learn==1.3.2     # Makine öğrenimi (sürüm düşürüldü)
+
+# === Görselleştirme ve Grafikler ===
+matplotlib==3.8.4
+seaborn==0.13.2
+plotly==5.21.0          # İnteraktif grafikler
+
+# === API & Veri Kaynağı ===
+polygon-api-client==1.12.0  # Polygon.io resmi kütüphane
+requests==2.31.0
+
+# === Zaman & Takvim Yönetimi ===
+pytz==2024.1
+python-dateutil==2.9.0.post0
+
+# === JSON, XML, CSV, Excel Desteği (opsiyonel) ===
+openpyxl==3.1.2
+xlrd==2.0.1
+lxml==5.2.1
+
+# === Veritabanı (opsiyonel) ===
+sqlalchemy==1.4.49
+databases[sqlite]==0.8.0
+
+# === Test ve Geliştirme Araçları ===
+pytest==8.1.1
+ipython==8.24.0
+black==24.4.2
+ruff==0.4.2
+pre-commit==3.7.0 

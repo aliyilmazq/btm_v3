@@ -1,0 +1,10 @@
+{
+  "name": "btm_v3-root",
+  "private": true,
+  "scripts": {
+    "start": "concurrently \"uvicorn main:app --reload\" \"npm start --prefix frontend\""
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.0"
+  }
+} 
