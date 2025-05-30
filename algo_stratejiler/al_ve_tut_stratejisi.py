@@ -5,6 +5,8 @@ backtest_analiz.py tarafından izole şekilde çağrılır.
 # al_ve_tut_stratejisi.py
 # Boş strateji scripti. Geliştirme için hazır. 
 
+import pandas as pd
+
 def al_ve_tut_analiz(fiyatlar, baslangic_tarihi=None, bitis_tarihi=None):
     """
     Klasik satın al ve tut stratejisi uygular. Her seferinde 1 adet hisse senedi için işlem yapar.
@@ -29,4 +31,21 @@ def al_ve_tut_analiz(fiyatlar, baslangic_tarihi=None, bitis_tarihi=None):
         "alis_fiyati": float(alis_fiyati),
         "bitis_fiyati": float(bitis_fiyati),
         "getiri": float(getiri)
-    } 
+    }
+
+def run_strategy(data):
+    """
+    Main.py tarafından çağrılan standart strateji arayüzü.
+    data: Polygon'dan gelen JSON veri (dict)
+    Dönüş: dict - analiz sonucu
+    """
+    try:
+        results = data.get('results', [])
+        if not results:
+            return {"hata": "Veri bulunamadı veya sonuçlar boş."}
+        closes = [item['c'] for item in results]
+        dates = [pd.to_datetime(item['t'], unit='ms') for item in results]
+        fiyatlar = pd.Series(closes, index=dates)
+        return al_ve_tut_analiz(fiyatlar)
+    except Exception as e:
+        return {"hata": str(e)} 

@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import StratejiPerformansOzeti from "./StratejiPerformansOzeti";
 
 function Step3AnalizSonuc({ formData, onBack }) {
   const [sonuc, setSonuc] = useState(null);
@@ -32,16 +33,16 @@ function Step3AnalizSonuc({ formData, onBack }) {
   return (
     <div>
       <h2>Analiz ve Sonuç</h2>
-      <button onClick={onBack}>Geri</button>
-      <button onClick={handleAnalyze} disabled={loading} style={{marginLeft: 8}}>
+      <button className="modern-btn" onClick={onBack}>Geri Dön</button>
+      <button className="modern-btn" onClick={handleAnalyze} disabled={loading} style={{marginLeft: 8}}>
         Analiz Et
       </button>
-      {loading && <div>Analiz yapılıyor...</div>}
-      {error && <div style={{color: 'red'}}>{error}</div>}
+      {loading && <div className="info-message">Analiz yapılıyor, lütfen bekleyin...</div>}
+      {error && <div className="error-message">{error}</div>}
       {sonuc && (
-        <pre style={{background: '#f5f5f5', padding: 12, marginTop: 12}}>
-          {JSON.stringify(sonuc, null, 2)}
-        </pre>
+        <div style={{marginTop: 24}}>
+          <StratejiPerformansOzeti sonuc={sonuc} />
+        </div>
       )}
     </div>
   );

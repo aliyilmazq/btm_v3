@@ -1,2 +1,6 @@
 2025-05-29 21:54:12,621 ERROR:Strateji rsi_stratejisi: run_strategy fonksiyonu yok
 2025-05-29 21:54:14,561 ERROR:rsi_stratejisi: HATA - run_strategy fonksiyonu yok
+2025-05-29 23:33:36,352 ERROR:Strateji al_ve_tut_stratejisi: run_strategy fonksiyonu yok
+2025-05-29 23:33:38,852 ERROR:al_ve_tut_stratejisi: HATA - run_strategy fonksiyonu yok
+2025-05-29 23:39:00,728 INFO:Strateji al_ve_tut_stratejisi başarıyla çalıştı.
+2025-05-29 23:39:00,729 INFO:al_ve_tut_stratejisi: {'baslangic_tarihi': '2020-06-01 04:00:00', 'bitis_tarihi': '2024-12-30 05:00:00', 'alis_fiyati': 80.4625, 'bitis_fiyati': 252.2, 'getiri': 2.1343793692713993}

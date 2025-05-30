@@ -1,7 +1,7 @@
 ---
 description: 
 globs: 
-alwaysApply: false
+alwaysApply: true
 ---
 uygulamayı yaparken hep izole bir yapı kur, yeni geliştirmeler eski kod yapılarını asla bozmasın ve bir hatayı çözmeden geliştirmeye devam etme. Mevcudu korumak ve eskiyi bozmamak ana hedefimiz.
 
@@ -25,3 +25,12 @@ Frontend’de hiçbir iş mantığı, veri işleme veya matematiksel analiz olma
 Sadece API ile konuşacak, gelen cevabı gösterecek.
 
 SPA ve PWA web app yapıyoruz.
+
+Bir problem bildirdiğinde, önce tüm ilgili kodu ve akışı tara,
+Tüm potansiyel hata ve riskleri bir liste halinde, öncelik sırasına göre bana sun,
+Sen önceliklendirme veya çözüm tercihini yaptıktan sonra, sadece seçtiğin hatadan başlayarak izole şekilde çözüm üret,
+Kendi başıma tek tek hata çözmeye çalışma, önce listeyi ve öncelik sırasını bana sun.
+
+Başlatma Scriptlerine Temizlik Komutu Ekle, package.json veya kendi başlatma scriptine, önce portları temizleyen komutlar ekleyebilirsin. Frontend ve backend npm start öncesi hep temiz olsun.
+
+

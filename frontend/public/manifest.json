@@ -1,0 +1,21 @@
+{
+  "short_name": "Citalf",
+  "name": "Citalf",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "icon-512.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#e0d4c4",
+  "display": "standalone",
+  "theme_color": "#e0d4c4",
+  "description": "Citalf - Akıllı Finansal Analiz Platformu"
+} 

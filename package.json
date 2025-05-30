@@ -2,9 +2,13 @@
   "name": "btm_v3-root",
   "private": true,
   "scripts": {
-    "start": "concurrently \"uvicorn main:app --reload\" \"npm start --prefix frontend\""
+    "clean-ports": "lsof -ti:8000 | xargs kill -9 || true && lsof -ti:3000 | xargs kill -9 || true",
+    "start": "npm run clean-ports && concurrently \"npm run start:frontend\" \"npm run start:backend\"",
+    "start:frontend": "cd frontend && npm start",
+    "start:backend": "uvicorn api:app --reload --port 8000",
+    "start:clean": "bash ./start_clean.sh"
   },
   "devDependencies": {
-    "concurrently": "^8.2.0"
+    "concurrently": "^8.2.2"
   }
-} 
+}

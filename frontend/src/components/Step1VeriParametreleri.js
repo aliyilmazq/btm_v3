@@ -12,33 +12,33 @@ function Step1VeriParametreleri({ onNext }) {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <h2>Veri Parametreleri</h2>
+    <form onSubmit={handleSubmit} className="modern-form">
+      <h2>Veri Girişi</h2>
       <div>
-        <label>Hisse Sembolü:</label>
-        <input value={ticker} onChange={e => setTicker(e.target.value)} required />
+        <label>Hisse Sembolü</label>
+        <input className="modern-input" value={ticker} onChange={e => setTicker(e.target.value)} required />
       </div>
       <div>
-        <label>Başlangıç Tarihi:</label>
-        <input type="date" value={startDate} onChange={e => setStartDate(e.target.value)} required />
+        <label>Başlangıç Tarihi</label>
+        <input className="modern-input" type="date" value={startDate} onChange={e => setStartDate(e.target.value)} required />
       </div>
       <div>
-        <label>Bitiş Tarihi:</label>
-        <input type="date" value={endDate} onChange={e => setEndDate(e.target.value)} required />
+        <label>Bitiş Tarihi</label>
+        <input className="modern-input" type="date" value={endDate} onChange={e => setEndDate(e.target.value)} required />
       </div>
       <div>
-        <label>Periyot:</label>
-        <select value={periyot} onChange={e => setPeriyot(e.target.value)}>
-          <option value="day">day</option>
-          <option value="hour">hour</option>
-          <option value="4hour">4hour</option>
-          <option value="5min">5min</option>
-          <option value="10min">10min</option>
-          <option value="15min">15min</option>
-          <option value="20min">20min</option>
+        <label>Veri Periyodu</label>
+        <select className="modern-input" value={periyot} onChange={e => setPeriyot(e.target.value)}>
+          <option value="day">Günlük</option>
+          <option value="hour">Saatlik</option>
+          <option value="4hour">4 Saatlik</option>
+          <option value="5min">5 Dakika</option>
+          <option value="10min">10 Dakika</option>
+          <option value="15min">15 Dakika</option>
+          <option value="20min">20 Dakika</option>
         </select>
       </div>
-      <button type="submit">İleri</button>
+      <button type="submit" className="modern-btn">Devam Et</button>
     </form>
   );
 }
