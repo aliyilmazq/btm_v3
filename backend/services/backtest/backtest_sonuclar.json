@@ -1,0 +1,48 @@
+[
+  {
+    "modul": "rsi_stratejisi",
+    "sonuc": {
+      "hata": "Parametreler eksik."
+    }
+  },
+  {
+    "modul": "fiyat_2sma_stratejisi",
+    "sonuc": {
+      "hata": "Parametreler eksik."
+    }
+  },
+  {
+    "modul": "al_ve_tut_stratejisi",
+    "sonuc": {
+      "baslangic_tarihi": "2023-01-03 05:00:00",
+      "bitis_tarihi": "2023-01-31 05:00:00",
+      "alis_fiyati": 125.07,
+      "bitis_fiyati": 144.29,
+      "getiri": 0.1536739425921484
+    }
+  },
+  {
+    "modul": "fiyat_1ema_stratejisi",
+    "sonuc": {
+      "hata": "Parametreler eksik."
+    }
+  },
+  {
+    "modul": "fiyat_2ema_stratejisi",
+    "sonuc": {
+      "hata": "Parametreler eksik."
+    }
+  },
+  {
+    "modul": "fiyat_1sma_stratejisi",
+    "sonuc": {
+      "hata": "Parametreler eksik."
+    }
+  },
+  {
+    "modul": "arima_stratejisi",
+    "sonuc": {
+      "hata": "Parametreler eksik."
+    }
+  }
+]
